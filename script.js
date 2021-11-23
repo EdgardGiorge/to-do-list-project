@@ -18,3 +18,7 @@ section0.innerText = 'Clique duas vezes em um item para marcá-lo como completo'
 const input0 = document.createElement('input');
 main.appendChild(input0);
 input0.id = 'texto-tarefa';
+
+const ol0 = document.createElement('ol');
+main.appendChild(ol0);
+ol0.id = 'lista-tarefas';
