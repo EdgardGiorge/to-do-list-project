@@ -14,3 +14,7 @@ const section0 = document.createElement('section');
 main.appendChild(section0);
 section0.id = 'funcionamento';
 section0.innerText = 'Clique duas vezes em um item para marcá-lo como completo';
+
+const input0 = document.createElement('input');
+main.appendChild(input0);
+input0.id = 'texto-tarefa';
