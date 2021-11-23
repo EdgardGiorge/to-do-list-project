@@ -1,0 +1,14 @@
+#texto-tarefa {
+  margin-top: 20px;
+  width: 150px;
+}
+
+#criar-tarefa {
+  background-color: deepskyblue;
+  color: white;
+  margin-left: 10px;
+  height: 30px;
+  width: 100px;
+  padding: 5px;
+  border-radius: 15px;
+}
