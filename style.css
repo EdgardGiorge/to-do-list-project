@@ -12,3 +12,15 @@
   padding: 5px;
   border-radius: 15px;
 }
+
+.selItem0 {
+  background-color: white;
+}
+
+.selItem {
+  background-color: gray;
+}
+
+.completed {
+  text-decoration: line-through solid black;
+}

@@ -28,11 +28,56 @@ const ol0 = document.createElement('ol'); /* lista Ordenada */
 main.appendChild(ol0);
 ol0.id = 'lista-tarefas';
 
+let itemList = ol0.children;
 function adItemList() {
-  const text = input0.value; /* rec. o valor de input(digitado) */
-  const itemList = document.createElement('li'); /* Cria li */
-  itemList.innerText = text; /* inseri o valor digitado na li */
-  ol0.appendChild(itemList);
-  input0.value = ''; /* zera a entrada */
+  const text = input0.value; /* recup. o valor de input(digitado) */
+  if (input0.value !== '') {
+    itemList = document.createElement('li'); /* Cria li */
+    itemList.innerText = text; /* inseri o valor digitado na li */
+    ol0.appendChild(itemList); /* determina o pai */
+    input0.value = ''; /* zera a entrada */
+    itemList.id = 'itemList';
+    ol0.style.backgroundColor = 'white'; /* inicio background ol */
+  }
 }
 button0.addEventListener('click', adItemList);
+
+ol0.className = 'selItem';
+function selecItem(itemClicado) {
+  if (itemClicado.target.id === 'itemList') {
+    const linePaint = document.querySelector('.selItem');
+    linePaint.classList.remove('selItem');
+    itemClicado.target.classList.add('selItem');
+  }
+}
+ol0.addEventListener('click', selecItem);
+
+// ol0.className = 'completed';
+// function throughItem(itemClicado) {
+//   if (itemClicado.target.id === 'itemList') {
+//     const lineThrough = document.querySelector('.completed');
+//     lineThrough.classList.remove('completed');
+//     itemClicado.target.classList.add('completed');
+//   }
+// }
+// ol0.addEventListener('click', throughItem);
+
+// ol0.className = 'completed';
+// function throughItem(itemClicado) {
+//   if (itemClicado.target.id === 'itemList') {
+//     const lineThrough = document.querySelector('.completed');
+//     lineThrough.classList.add('completed');
+//     //itemClicado.target.classList.add('completed');
+//   }
+//  // const lineThrough = document.querySelector('.completed');
+//    // lineThrough.classList.remove('completed');
+// }
+
+// function unthroughItem(itemClicado1) {
+//   if (itemClicado1.target.id === 'itemList') {
+//     const lineThrough = document.querySelector('.completed');
+//     lineThrough.classList.remove('completed');
+//   }
+// }
+
+// ol0.addEventListener('click', throughItem);
