@@ -28,13 +28,12 @@ const ol0 = document.createElement('ol'); /* lista Ordenada */
 main.appendChild(ol0);
 ol0.id = 'lista-tarefas';
 
-let itemList = ol0.children;
 function adItemList() {
   const text = input0.value; /* recup. o valor de input(digitado) */
   if (input0.value !== '') {
-    itemList = document.createElement('li'); /* Cria li */
-    itemList.innerText = text; /* inseri o valor digitado na li */
+    const itemList = document.createElement('li'); /* Cria li */
     ol0.appendChild(itemList); /* determina o pai */
+    itemList.innerText = text; /* inseri o valor digitado na li */
     input0.value = ''; /* zera a entrada */
     itemList.id = 'itemList';
     ol0.style.backgroundColor = 'white'; /* inicio background ol */
@@ -52,32 +51,20 @@ function selecItem(itemClicado) {
 }
 ol0.addEventListener('click', selecItem);
 
-// ol0.className = 'completed';
-// function throughItem(itemClicado) {
-//   if (itemClicado.target.id === 'itemList') {
-//     const lineThrough = document.querySelector('.completed');
-//     lineThrough.classList.remove('completed');
-//     itemClicado.target.classList.add('completed');
-//   }
-// }
-// ol0.addEventListener('click', throughItem);
+function throughItem(itemClicado2) {
+  if (itemClicado2.target.classList.contains('completed') === true) {
+    itemClicado2.target.classList.remove('completed');
+  } else {
+    itemClicado2.target.classList.add('completed');
+  }
+}
 
-// ol0.className = 'completed';
-// function throughItem(itemClicado) {
-//   if (itemClicado.target.id === 'itemList') {
-//     const lineThrough = document.querySelector('.completed');
-//     lineThrough.classList.add('completed');
-//     //itemClicado.target.classList.add('completed');
-//   }
-//  // const lineThrough = document.querySelector('.completed');
-//    // lineThrough.classList.remove('completed');
-// }
+ol0.addEventListener('dblclick', throughItem);
 
-// function unthroughItem(itemClicado1) {
-//   if (itemClicado1.target.id === 'itemList') {
-//     const lineThrough = document.querySelector('.completed');
-//     lineThrough.classList.remove('completed');
+// function unthroughItem(itemClicado2) { /*apagar item lista*/
+//   if (itemClicado2.target.id === 'itemList') {
+//     itemClicado2.target.remove('completed');
 //   }
 // }
 
-// ol0.addEventListener('click', throughItem);
+// ol0.addEventListener('dblclick', unthroughItem);
