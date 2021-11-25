@@ -25,6 +25,15 @@
   text-decoration: line-through solid black;
 }
 
+#remover-finalizados {
+  background-color: darkcyan;
+  color: white;
+  margin-right: 5px;
+  height: 25px;
+  width: 150px;
+  border-radius: 15px;
+}
+
 #apaga-tudo {
   background-color: red;
   color: white;

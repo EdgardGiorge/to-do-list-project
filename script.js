@@ -63,6 +63,10 @@ ol0.addEventListener('dblclick', throughItem);
 
 const section1 = document.createElement('section');
 main.appendChild(section1); /* Section de botões */
+const button2 = document.createElement('button');
+section1.appendChild(button2); /* Botão Limpar Lista */
+button2.id = 'remover-finalizados';
+button2.innerText = 'Limpar Completos';
 const button1 = document.createElement('button');
 section1.appendChild(button1); /* Botão Limpar Lista */
 button1.id = 'apaga-tudo';
@@ -73,10 +77,12 @@ function delAllItem() { /* apaga toda a <lo> lista */
 }
 
 button1.addEventListener('click', delAllItem);
-// function unthroughItem(itemClicado2) { /*apagar item lista*/
-//   if (itemClicado2.target.id === 'itemList') {
-//     itemClicado2.target.remove('completed');
-//   }
-// }
 
-// ol0.addEventListener('dblclick', unthroughItem);
+function removOk() {
+  const completos = document.querySelectorAll('.completed');
+  for (let i = 0; i < completos.length; i += 1) {
+    ol0.removeChild(completos[i]); /* remove child do ol */
+  }
+}
+
+button2.addEventListener('click', removOk);
