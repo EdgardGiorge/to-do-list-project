@@ -24,3 +24,12 @@
 .completed {
   text-decoration: line-through solid black;
 }
+
+#apaga-tudo {
+  background-color: red;
+  color: white;
+  margin-left: 10px;
+  height: 25px;
+  width: 100px;
+  border-radius: 15px;
+}

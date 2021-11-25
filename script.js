@@ -42,7 +42,7 @@ function adItemList() {
 button0.addEventListener('click', adItemList);
 
 ol0.className = 'selItem';
-function selecItem(itemClicado) {
+function selecItem(itemClicado) { /* Seleção de item da lista */
   if (itemClicado.target.id === 'itemList') {
     const linePaint = document.querySelector('.selItem');
     linePaint.classList.remove('selItem');
@@ -51,7 +51,7 @@ function selecItem(itemClicado) {
 }
 ol0.addEventListener('click', selecItem);
 
-function throughItem(itemClicado2) {
+function throughItem(itemClicado2) { /* Risca item da lista */
   if (itemClicado2.target.classList.contains('completed') === true) {
     itemClicado2.target.classList.remove('completed');
   } else {
@@ -61,6 +61,18 @@ function throughItem(itemClicado2) {
 
 ol0.addEventListener('dblclick', throughItem);
 
+const section1 = document.createElement('section');
+main.appendChild(section1); /* Section de botões */
+const button1 = document.createElement('button');
+section1.appendChild(button1); /* Botão Limpar Lista */
+button1.id = 'apaga-tudo';
+button1.innerText = 'Limpar Lista';
+
+function delAllItem() { /* apaga toda a <lo> lista */
+  ol0.innerText = '';
+}
+
+button1.addEventListener('click', delAllItem);
 // function unthroughItem(itemClicado2) { /*apagar item lista*/
 //   if (itemClicado2.target.id === 'itemList') {
 //     itemClicado2.target.remove('completed');
