@@ -28,17 +28,39 @@
 #remover-finalizados {
   background-color: darkcyan;
   color: white;
-  margin-right: 5px;
+  margin-left: 10px;
   height: 25px;
   width: 150px;
   border-radius: 15px;
 }
 
-#apaga-tudo {
+button:hover { /* ao passar o mouse nos botões text=negrito */
+  font-weight: 700; /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/font-weight */
+}
+
+#apaga-tudo , #salvar-tarefas {
   background-color: red;
   color: white;
   margin-left: 10px;
   height: 25px;
   width: 100px;
   border-radius: 15px;
+}
+
+#salvar-tarefas {
+  background-color: aqua;
+  color: black;
+}
+
+#mover-cima , #mover-baixo , #remover-selecionado {
+  background-color: darkorange;
+  color: black;
+  margin-left: 10px;
+  height: 25px;
+  width: 50px;
+  border-radius: 15px;
+}
+
+#remover-selecionado {
+  background-color: brown;
 }
